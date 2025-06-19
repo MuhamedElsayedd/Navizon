@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('alerts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('vehicle_id');
+            $table->string('type');
+            $table->text('message');
+            $table->boolean('is_read');
             $table->timestamps();
         });
     }
